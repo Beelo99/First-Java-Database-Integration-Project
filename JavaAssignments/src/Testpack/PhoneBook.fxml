@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Testpack.Assignment1Controller">
+   <center>
+      <TableView fx:id="tblContacts" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colFirstName" prefWidth="75.0" text="First Name" />
+          <TableColumn fx:id="colLastName" prefWidth="75.0" text="Last Name" />
+            <TableColumn fx:id="colPhoneNumber" prefWidth="101.0" text="Phone Number" />
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="120.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="2.0" prefWidth="600.0" spacing="15.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <TextField fx:id="txtId" prefHeight="25.0" prefWidth="59.0" promptText="ID#">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+                  <RadioButton fx:id="rbAdd" mnemonicParsing="false" onAction="#changePromptText" text="Add">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tg" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbSearch" mnemonicParsing="false" onAction="#changePromptText" text="Search" toggleGroup="$tg" />
+                  <RadioButton fx:id="rbModify" mnemonicParsing="false" onAction="#changePromptText" text="Modify" toggleGroup="$tg" />
+                  <RadioButton fx:id="rbDelete" mnemonicParsing="false" onAction="#changePromptText" text="Delete" toggleGroup="$tg" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="11.0" prefWidth="600.0" spacing="5.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <TextField fx:id="txtFName" promptText="First Name" />
+                  <TextField fx:id="txtLName" promptText="Last Name" />
+                  <TextField fx:id="txtNum" promptText="Phone Number" />
+                  <Button fx:id="btnOk" mnemonicParsing="false" onAction="#doPick" text="OK" />
+               </children>
+            </HBox>
+            <Button fx:id="btnView" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#doView" text="View">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
