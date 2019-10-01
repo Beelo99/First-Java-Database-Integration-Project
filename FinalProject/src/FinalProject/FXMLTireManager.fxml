@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="BorderPane" fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="FinalProject.TireManager">
+  <bottom>
+    <GridPane fx:id="gpBottom" visible="false">
+      <children>
+        <Label alignment="CENTER" contentDisplay="RIGHT" text="Purchase Date:" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+          <font>
+            <Font name="Verdana Bold Italic" size="12.0" fx:id="x1" />
+          </font>
+        </Label>
+        <Label font="$x1" text="Purchased Price:" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+        <Label font="$x1" text="Purchased From:" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+        <TextField fx:id="txtPDate" maxWidth="-Infinity" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <TextField fx:id="txtPPrice" maxWidth="-Infinity" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="txtPFrom" maxWidth="-Infinity" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Label fx:id="lblTType" alignment="CENTER" contentDisplay="RIGHT" font="$x1" text="Tire Type:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+        <Label fx:id="lblTWidth" alignment="CENTER" contentDisplay="RIGHT" font="$x1" text="Tire Width:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+        <Label fx:id="lblTLeft" alignment="CENTER" contentDisplay="RIGHT" font="$x1" text="Tread Left:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+        <ChoiceBox fx:id="cbOne" GridPane.columnIndex="3" GridPane.rowIndex="0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <TextField id="txtPPrice" fx:id="txtTwo" maxWidth="-Infinity" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+        <TextField id="txtPPrice" fx:id="txtThree" maxWidth="-Infinity" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+        <TextField fx:id="txtOne" maxWidth="150.0" prefWidth="200.0" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+        <Button fx:id="btnOK" font="$x1" mnemonicParsing="false" onAction="#doClear" text="OK" visible="false" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+          <GridPane.margin>
+            <Insets bottom="10.0" right="10.0" fx:id="x8" />
+          </GridPane.margin>
+        </Button>
+        <Button fx:id="btnDone" font="$x1" mnemonicParsing="false" onAction="#doSave" text="Done" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+          <GridPane.margin>
+            <Insets right="10.0" />
+          </GridPane.margin>
+        </Button>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <padding>
+        <Insets bottom="10.0" />
+      </padding>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+      <BorderPane.margin>
+        <Insets bottom="4.0" />
+      </BorderPane.margin>
+    </GridPane>
+  </bottom>
+  <center>
+    <GridPane>
+      <children>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="25.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+          <children>
+            <Label text="Brand: ">
+              <font>
+                <Font name="Verdana Bold Italic" size="18.0" fx:id="x3" />
+              </font>
+              <VBox.margin>
+                <Insets left="10.0" fx:id="x2" />
+              </VBox.margin>
+            </Label>
+            <Label font="$x3" text="Price: " VBox.margin="$x2" />
+            <Label font="$x3" text="Diameter (inches): " VBox.margin="$x2" />
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+          <children>
+            <TextField fx:id="txtBrand" prefHeight="24.0" prefWidth="200.0" />
+            <TextField fx:id="txtPrice" prefHeight="24.0" prefWidth="200.0" />
+            <TextField fx:id="txtSize" prefHeight="24.0" prefWidth="200.0" />
+          </children>
+        </VBox>
+        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+          <children>
+            <RadioButton fx:id="rbWheels" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#doPick" text="Wheels" textAlignment="CENTER">
+              <font>
+                <Font name="Verdana Bold Italic" size="14.0" fx:id="x5" />
+              </font>
+              <toggleGroup>
+                <ToggleGroup fx:id="type" />
+              </toggleGroup>
+              <VBox.margin>
+                <Insets bottom="20.0" left="30.0" top="20.0" fx:id="x4" />
+              </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="rbTires" font="$x5" mnemonicParsing="false" onAction="#doPick" text="Tires" toggleGroup="$type" VBox.margin="$x4" />
+          </children>
+        </VBox>
+        <VBox prefHeight="146.0" prefWidth="177.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <Button fx:id="btnAdd" alignment="CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" onAction="#doAdd" prefWidth="60.0" text="Add" translateX="0.0" translateY="-70.0">
+              <VBox.margin>
+                <Insets fx:id="x6" />
+              </VBox.margin>
+            </Button>
+            <Button fx:id="btnRemove" alignment="CENTER" contentDisplay="CENTER" font="$x1" mnemonicParsing="false" onAction="#doRemove" prefWidth="90.0" text="Remove" translateX="0.0" translateY="-50.0" VBox.margin="$x6" />
+            <Button fx:id="btnDetails" font="$x1" mnemonicParsing="false" onAction="#addDetails" prefWidth="120.0" text="Details" translateY="-30.0" VBox.margin="$x6" />
+          </children>
+        </VBox>
+        <ListView fx:id="lv" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="1" />
+        <Button fx:id="btnSave" mnemonicParsing="false" onAction="#saveToFile" prefHeight="144.00009999999747" prefWidth="225.00009999999747" text="Save" GridPane.columnIndex="3" GridPane.rowIndex="0">
+          <font>
+            <Font name="Verdana Bold Italic" size="25.0" />
+          </font>
+        </Button>
+        <Text id="title" fill="RED" fontSmoothingType="GRAY" scaleX="1.0" scaleY="1.4800791642333397" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="1.6" text="Tire Manager" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="TOP">
+          <font>
+            <Font name="System Bold Italic" size="22.0" />
+          </font>
+          <GridPane.margin>
+            <Insets top="40.0" />
+          </GridPane.margin>
+        </Text>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </center>
+</BorderPane>

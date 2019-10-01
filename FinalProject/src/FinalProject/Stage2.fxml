@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="FinalProject.TireManager">
+  <children>
+    <Accordion layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0">
+      <expandedPane>
+        <TitledPane fx:id="x1" animated="false" text="Purchase Details">
+          <content>
+            <VBox fx:id="vbPDetails" prefHeight="200.0" prefWidth="100.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label fx:id="lblPDate" text="Purchase Date:" />
+                    <TextField id="pDate" fx:id="txtPDate" prefWidth="200.0" />
+                    <Label fx:id="lblPDateFormat" text="(dd/MM/yyyy)" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label fx:id="lblPPrice" text="Purchased Price:" />
+                    <TextField id="pPrice" fx:id="txtPPrice" prefWidth="200.0" />
+                    <Button fx:id="btnExtra" mnemonicParsing="false" onAction="#addNew" text="Button" />
+                  </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <Label fx:id="lblPFrom" text="Purchased From:" />
+                    <TextField id="pFrom" fx:id="txtPFrom" prefWidth="200.0" />
+                  </children>
+                </HBox>
+              </children>
+            </VBox>
+          </content>
+        </TitledPane>
+      </expandedPane>
+      <panes>
+        <fx:reference source="x1" />
+        <TitledPane animated="false" text="Tire/Wheel Details">
+          <content>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+              <children>
+                <HBox prefHeight="40.0" prefWidth="596.0">
+                  <children>
+                    <Label text="Tire Width:" />
+                    <ChoiceBox fx:id="cbWidth">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ChoiceBox>
+                  </children>
+                </HBox>
+                <HBox prefHeight="40.0" prefWidth="596.0">
+                  <children>
+                    <Label text="Wheel Offset:" />
+                    <ChoiceBox fx:id="cbOffset">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ChoiceBox>
+                  </children>
+                </HBox>
+                <HBox prefHeight="40.0" prefWidth="596.0">
+                  <children>
+                    <Label text="Tire Type:" />
+                    <ChoiceBox fx:id="cbType">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ChoiceBox>
+                  </children>
+                </HBox>
+                <HBox prefHeight="40.0" prefWidth="596.0">
+                  <children>
+                    <Label text="Tread Left:" />
+                    <ChoiceBox fx:id="cbTread">
+                      <items>
+                        <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Item 1" />
+                          <String fx:value="Item 2" />
+                          <String fx:value="Item 3" />
+                        </FXCollections>
+                      </items>
+                    </ChoiceBox>
+                  </children>
+                </HBox>
+                <HBox prefHeight="40.0" prefWidth="596.0">
+                  <children>
+                    <Button mnemonicParsing="false" text="Additional Details" />
+                  </children>
+                </HBox>
+              </children>
+            </VBox>
+          </content>
+        </TitledPane>
+        <TitledPane animated="false" text="Images">
+          <content>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+              <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  </children>
+                </HBox>
+              </children>
+            </VBox>
+          </content>
+        </TitledPane>
+      </panes>
+    </Accordion>
+    <Button fx:id="btnExit" mnemonicParsing="false" onAction="#saveExit" text="Save &amp; Exit" AnchorPane.bottomAnchor="60.0" AnchorPane.rightAnchor="20.0" />
+  </children>
+</AnchorPane>
